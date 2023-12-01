@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""Python script that fetches https://intranet.hbtn.io/status."""
+"""  fetches https://intranet.hbtn.io/status  """
+import urllib.request
 
-from urllib import request
 
 if __name__ == "__main__":
-    with request.urlopen("https://intranet.hbtn.io/status") as page:
-        content = page.read()
+    with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
+        r = response.read()
         print("Body response:")
-        print("\t- type: {}".format(type(content)))
-        print("\t- content: {}".format(content))
-        print("\t- utf8 content: {}".format(content.decode('utf-8')))
+        print("\t- type: {}".format(type(r)))
+        print("\t- content: {}".format(r))
+        print("\t- utf8 content: {}".format(r.decode("UTF-8")))
